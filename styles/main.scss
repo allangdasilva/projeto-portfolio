@@ -16,6 +16,7 @@ body {
     background-color: red;
 
     .container-site {
+        position: relative;
         @include flex-center;
         justify-content: flex-start;
     
@@ -24,10 +25,78 @@ body {
         margin-inline: auto;
         
         padding-inline: 10px;
-    
+
+        .header-menu-hamburger {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+
+            @include flex-center;
+
+            height: 50px;
+            width: 50px;
+
+            border-radius: 50%;
+            cursor: pointer;
+
+            z-index: 10;
+
+            background-color: black;
+
+            // Desktop
+            @include desktop {
+                display: none;
+            }
+
+            .hamburger-icon {
+                position: relative;
+
+                height: 2px;
+                width: 25px;
+
+                background-color: white;
+
+                transition: opacity .2s;
+
+                &.hamburger-icon-active {
+                    background-color: transparent;
+
+                    &::after {
+                        transform: translateY(0px);
+                        transform: rotate(-45deg);
+                    }
+                    &::before {
+                        transform: translateY(0px);
+                        transform: rotate(45deg);
+                    }
+                }
+                &::after, &::before {
+                    content: '';
+                    position: absolute;
+
+                    height: 2px;
+                    width: 100%;
+
+                    background-color: white;
+
+                    transition: transform .4s;
+                }
+                &::after {
+                    transform: translateY(8px);
+                }
+                &::before {
+                    transform: translateY(-8px);
+                }
+            }
+        }
         header {
+            position: fixed;
+            left: 0;
+
             @include flex-center;
             align-items: flex-start;
+
+            transform: translateX(-100%);
 
             height: 100vh;
             width: 100%;
@@ -36,7 +105,21 @@ body {
             overflow-y: auto;
             scrollbar-width: none;
 
-            background-color: green;
+            background-color: $midnightblue-02;
+
+            transition: transform .4s;
+
+            // Desktop
+            @include desktop {
+                position: initial;
+                transform: translateX(0);
+
+                transition: none;
+            }
+
+            &.header-active {
+                transform: translateX(0);
+            }
     
             .c-header-menu {
                 @include flex-center-column;
@@ -58,24 +141,64 @@ body {
                         gap: 10px;
 
                         width: 100%;
+
+                        &.box-01-profile-active {
+                            .profile-pic {
+                                img {
+                                    transform: scale(1);
+                                    opacity: 1;
+                                }
+                            }
+                            h2 {
+                                transform: translateY(0);
+                                opacity: 1;
+                            }
+                        }
                         
                         .profile-pic {
-                            height: 180px;
+                            @include flex-center;
+
                             width: 100%;
 
-                            background-color: red;
-
                             img {
+                                @include flex-center;
 
+                                transform: scale(.5);
+
+                                width: 100%;
+
+                                opacity: 0;
+
+                                transition: 2s ease;
+
+                                // Desktop
+                                @include desktop {
+                                    width: 100%;
+                                    opacity: 1;
+
+                                    transition: none;
+                                }
                             }
                         }
                         h2 {
-                            width: 100%;
+                            transform: translateY(-30px);
 
-                            font-size: 2rem;
-                            font-weight: 600;
+                            width: 100%;
+                            opacity: 0;
 
                             text-align: center;
+                            font-size: 2rem;
+                            font-weight: 600;
+                            color: $white;
+
+                            transition: .4s ease-out;
+                            transition-delay: .1s;
+
+                            // Desktop
+                            @include desktop {
+                                transform: translateY(0);
+                                opacity: 1;
+                            }
 
                             span {
                                 font-weight: 400;
@@ -88,21 +211,53 @@ body {
 
                         .skills-text {
                             position: relative;
+                            @include flex-center;
+
+                            height: 20px;
+                            width: 100%;
+
+                            overflow: hidden;
+
+                            color: $gray;
                             
-                            .text-01 {
-                                
+                            .skills-text-01 {
+                                position: absolute;
                             }
-                            .text-02 {
-                                display: none;
+                            .skills-text-02 {
+                                position: absolute;
+                            }
+                            .skills-text-hidden {
+                                transform: translateY(100%);
+                                animation: scroll-skills-out .4s;
+                            }
+                            .skills-text-animation {
+                                animation: scroll-skills-in .4s;
                             }
                         }
                     }
                     .box-01-midia {
                         @include flex-center;
 
+                        transform: translateY(-20px);
+
                         width: 100%;
                         padding-top: 10px;
 
+                        opacity: 0;
+
+                        transition: .4s ease-out;
+                        transition-delay: .1s;
+
+                        // Desktop
+                        @include desktop {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+
+                        &.box-01-midia-active {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
                         ul {
                             @include flex-center;
                             gap: 10px;
@@ -117,16 +272,19 @@ body {
 
                                 border-radius: 50%;
 
-                                background-color: blue;
+                                background-color: $midnightblue-01;
 
                                 a {
                                     @include flex-center;
 
+                                    height: 100%;
                                     width: 100%;
 
                                     img {
                                         width: 100%;
                                         max-width: 20px;
+
+                                        filter: brightness(0) saturate(100%) invert(100%) sepia(21%) saturate(7498%) hue-rotate(183deg) brightness(130%) contrast(95%);
                                     }
                                 }
                             }
@@ -138,46 +296,68 @@ body {
 
                     width: 100%;
 
-                    ul {
+                    .box-02-ul {
                         @include flex-center-column;
 
                         width: 100%;
 
-                        li {
+                        .ul-list {
                             @include flex-center;
 
                             width: 100%;
 
-                            border-bottom: 1px solid white;
+                            border-bottom: 1px solid $gray-02;
 
                             &:first-child {
-                                border-top: 1px solid white;
+                                border-top: 1px solid $gray-02;
                             }
 
-                            a {
+                            .list-link {
                                 @include flex-center;
                                 justify-content: flex-start;
                                 gap: 10px;
 
+                                transform: translateX(-100%);
+                                
                                 width: 100%;
 
                                 padding: 10px 0 10px 10px;
 
-                                .box-02-list-image {
+                                // Desktop
+                                @include desktop {
+                                    transform: translate(0);
+                                }
+
+                                &.list-link-active {
+                                    transform: translateX(0);
+                                }
+                                .link-image {
                                     @include flex-center;
 
                                     width: 100%;
-                                    max-width: 20px;
-
-                                    //padding-left: 10px;
+                                    max-width: 24px;
 
                                     img {
                                         width: 100%;
+
+                                        filter: brightness(0) saturate(100%) invert(100%) sepia(21%) saturate(7498%) hue-rotate(183deg) brightness(130%) contrast(95%);
                                     }
                                 }
-                                .box-02-list-text {
-                                    
+                                .link-text {
+                                    color: $white;
                                 }
+                            }
+                            .list-link-01 {
+                                transition: transform .4s;
+                            }
+                            .list-link-02 {
+                                transition: transform .6s;
+                            }
+                            .list-link-03 {
+                                transition: transform .8s;
+                            }
+                            .list-link-04 {
+                                transition: transform 1s;
                             }
                         }
                     }
@@ -201,11 +381,20 @@ body {
 
                         overflow: hidden;
 
-                        background-color: red;
+                        background-color: $midnightblue-01;
+
+                        transition: background-color .4s;
 
                         &:hover {
+                            background-color: $turquoise;
+
                             .cv-image {
                                 transform: translateX(305%);
+                                background-color: $white;
+
+                                img {
+                                    filter: brightness(0) saturate(100%) invert(67%) sepia(11%) saturate(3820%) hue-rotate(125deg) brightness(97%) contrast(97%);
+                                }
                             }
                             .cv-text {
 
@@ -234,15 +423,17 @@ body {
 
                             border-radius: 50%;
 
-                            background-color: blue;
+                            background-color: $turquoise;
 
                             z-index: 10;
 
-                            transition: transform .4s;
+                            transition: transform .6s, background-color .4s;
 
                             img {
                                 width: 100%;
-                                max-width: 20px
+                                max-width: 24px;
+
+                                filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(299deg) brightness(102%) contrast(102%);
                             }
                         }
                         .cv-text {
@@ -256,28 +447,49 @@ body {
                             span {
                                 position: absolute;
                                 width: 100%;
+                                color: $white;
                             }
                             .text-download {
                                 transform: translateX(50%);
-                                transition: transform .4s, opacity .3s;
+                                transition: transform .6s, opacity .3s;
                             }
                             .text-hover {
                                 opacity: 0;
                                 pointer-events: none;
                                 transform: translateX(50%);
                                 
-                                transition: transform .4s, opacity .3s;
+                                transition: transform .6s, opacity .3s;
                             }
                         }
                     }
                 }
-                .header-menu-hamburger {
-                    display: none;
-                    .hamburger-icon {
-    
-                    }
-                }
             }
         }
+        main {
+            height: 100vh;
+            width: 100%;
+            background-color: blue;
+        }
+    }
+}
+
+@keyframes scroll-skills-in {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes scroll-skills-out {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
     }
 }
