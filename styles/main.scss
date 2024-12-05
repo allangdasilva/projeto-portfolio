@@ -21,7 +21,7 @@ body {
         justify-content: flex-start;
     
         width: 100%;
-        max-width: 1150px;
+        max-width: 1200px;
         margin-inline: auto;
         
         padding-inline: 10px;
@@ -147,11 +147,16 @@ body {
                                 img {
                                     transform: scale(1);
                                     opacity: 1;
+
+                                    transition: transform 2s ease, opacity 1.5s;
                                 }
                             }
                             h2 {
                                 transform: translateY(0);
                                 opacity: 1;
+
+                                transition: 2s ease;
+
                             }
                         }
                         
@@ -169,11 +174,11 @@ body {
 
                                 opacity: 0;
 
-                                transition: 2s ease;
+                                transition-delay: .4s;
 
                                 // Desktop
                                 @include desktop {
-                                    width: 100%;
+                                    transform: scale(1);
                                     opacity: 1;
 
                                     transition: none;
@@ -181,7 +186,7 @@ body {
                             }
                         }
                         h2 {
-                            transform: translateY(-30px);
+                            transform: translateY(-60px);
 
                             width: 100%;
                             opacity: 0;
@@ -191,13 +196,14 @@ body {
                             font-weight: 600;
                             color: $white;
 
-                            transition: .4s ease-out;
-                            transition-delay: .1s;
+                            transition-delay: .4s;
 
                             // Desktop
                             @include desktop {
                                 transform: translateY(0);
                                 opacity: 1;
+
+                                transition: none;
                             }
 
                             span {
@@ -245,18 +251,21 @@ body {
 
                         opacity: 0;
 
-                        transition: .4s ease-out;
-                        transition-delay: .1s;
+                        transition-delay: .2s;
 
                         // Desktop
                         @include desktop {
                             transform: translateY(0);
                             opacity: 1;
+
+                            transition: none;
                         }
 
                         &.box-01-midia-active {
                             transform: translateY(0);
                             opacity: 1;
+
+                            transition: .6s ease-out;
                         }
                         ul {
                             @include flex-center;
@@ -273,6 +282,12 @@ body {
                                 border-radius: 50%;
 
                                 background-color: $midnightblue-01;
+
+                                transition: background-color .4s;
+
+                                &:hover {
+                                    background-color: $turquoise;
+                                }
 
                                 a {
                                     @include flex-center;
@@ -311,7 +326,6 @@ body {
                             &:first-child {
                                 border-top: 1px solid $gray-02;
                             }
-
                             .list-link {
                                 @include flex-center;
                                 justify-content: flex-start;
@@ -331,6 +345,16 @@ body {
                                 &.list-link-active {
                                     transform: translateX(0);
                                 }
+                                &:hover {
+                                    .link-image {
+                                        img {
+                                            filter: brightness(0) saturate(100%) invert(30%) sepia(93%) saturate(7079%) hue-rotate(300deg) brightness(118%) contrast(115%);
+                                        }
+                                    }
+                                    .link-text {
+                                        color: $violet;
+                                    }
+                                }
                                 .link-image {
                                     @include flex-center;
 
@@ -341,10 +365,14 @@ body {
                                         width: 100%;
 
                                         filter: brightness(0) saturate(100%) invert(100%) sepia(21%) saturate(7498%) hue-rotate(183deg) brightness(130%) contrast(95%);
+
+                                        transition: filter .8s;
                                     }
                                 }
                                 .link-text {
                                     color: $white;
+
+                                    transition: color .8s;
                                 }
                             }
                             .list-link-01 {
@@ -401,15 +429,14 @@ body {
                                 .text-download {
                                     opacity: 0;
                                     pointer-events: none;
-                                    transform: translateX(5%);        
+                                    transform: translateX(-50%);        
                                 }
                                 .text-hover {
                                     opacity: 1;
-                                    transform: translateX(5%);        
+                                    transform: translateX(-70%);        
                                 }
                             }
                         }
-
                         .cv-image {
                             position: absolute;
                             left: 8px;
@@ -446,7 +473,6 @@ body {
 
                             span {
                                 position: absolute;
-                                width: 100%;
                                 color: $white;
                             }
                             .text-download {
