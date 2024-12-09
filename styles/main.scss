@@ -18,13 +18,30 @@ body {
     .container-site {
         position: relative;
         @include flex-center;
-        justify-content: flex-start;
+        align-items: flex-start;
     
         width: 100%;
         max-width: 1200px;
         margin-inline: auto;
         
         padding-inline: 10px;
+
+        // w-500px
+        @include w-500px {
+            max-width: 500px;
+        }
+        // w-700px
+        @include w-700px {
+            max-width: 700px;
+        }
+        // w-900px
+        @include w-900px {
+            max-width: 900px;
+        }
+        // Desktop
+        @include desktop {
+            max-width: 1200px;
+        }
 
         .header-menu-hamburger {
             position: absolute;
@@ -104,6 +121,8 @@ body {
 
             overflow-y: auto;
             scrollbar-width: none;
+
+            z-index: 10;
 
             background-color: $midnightblue-02;
 
@@ -224,7 +243,7 @@ body {
 
                             overflow: hidden;
 
-                            color: $gray;
+                            color: $gray-01;
                             
                             .skills-text-01 {
                                 position: absolute;
@@ -494,7 +513,208 @@ body {
         main {
             height: 100vh;
             width: 100%;
-            background-color: blue;
+
+            overflow: auto;
+            //scrollbar-width: none;
+
+            background-color: $midnightblue-01;
+
+            .section-01 {
+                @include flex-center-column;
+
+                width: 100%;
+
+                // w-900px
+                @include w-900px {
+                    flex-direction: row;
+                    align-items: stretch;
+                    gap: 20px;
+
+                    padding: 70px 20px;
+                }
+
+                .section-01-c-info {
+                    @include flex-center-column;
+                    gap: 20px;
+
+                    width: 100%;
+                    padding: 50px 10px 0 10px;
+
+                    text-align: center;
+
+                    // w-900px
+                    @include w-900px {
+                        //justify-content: flex-end;
+
+                        padding: 0;
+                        text-align: initial;
+                    }
+
+                    .info-c-title {
+                        width: 100%;
+                        
+                        h2 {
+                            font-size: 5rem;
+                            font-weight: 600;
+                            color: $white;
+
+                            // w-900px
+                            @include w-900px {
+                                max-width: 200px;
+                            }
+
+                            span {
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                    .info-c-skills {
+                        width: 100%;
+
+                        p {
+                            font-size: 1.4rem;
+                            color: $turquoise;
+
+                            // w-900px
+                            @include w-900px {
+                                font-size: 1.6rem;
+                            }
+
+                            .info-skills-text-01 {
+
+                            }
+                            .info-skills-text-02 {
+
+                            }
+                        }
+                    }
+                    .info-c-text {
+                        width: 100%;
+
+                        p {
+                            font-size: 1.2rem;
+                            color: $gray-01;
+                        }
+                    }
+                    .info-c-buttons {
+                        @include flex-center;
+                        gap: 16px;
+
+                        width: 100%;
+
+                        // w-900px
+                        @include w-900px {
+                            justify-content: flex-start;
+                            padding-top: 10px;
+                        }
+
+                        a {
+                            padding: 16px 30px;
+
+                            border-radius: 30px;
+
+                            font-size: 1.2rem;
+                            color: $midnightblue-01;
+                        }
+                        .button-portfolio {
+                            background-color: $pink;
+                        }
+                        .button-contact {
+                            background-color: $turquoise;
+                        }
+                    }
+                }
+                .section-01-c-profile {
+                    @include flex-center;
+
+                    width: 100%;
+                    padding-inline: 10px;
+
+                    // w-900px
+                    @include w-900px {
+                        align-items: flex-end;
+                        padding: 0;
+                    }
+
+                    .profile-c-info {
+                        position: relative;
+
+                        @include flex-center;
+
+                        width: 100%;
+                        padding-block: 70px;
+
+                        overflow: hidden;
+
+                        text-align: center;
+
+                        // w-900px
+                        @include w-900px {
+                            padding: 0;
+                            overflow: initial;
+                        }
+
+                        .profile-image {
+                            //height: 500px;
+                            width: 100%;
+                            
+                            background-color: red;
+                        }
+                        .circular-image {
+                            position: absolute;
+                            top: 5px;
+                            left: -60px;
+
+                            height: 130px;
+                            width: 130px;
+
+                            // w-900px
+                            @include w-900px {
+                                top: -65px;
+                            }
+                        }
+                        .info-c-drop-box {
+                            position: absolute;
+                            bottom: 16px;
+
+                            @include flex-center-column;
+                            gap: 10px;
+
+                            width: 100%;
+                            max-width: 80%;
+
+                            padding: 10px;
+
+                            border-radius: 10px;
+
+                            background-color: blue;
+                            
+                            // w-900px
+                            @include w-900px {
+                                bottom: -54px;
+                            }
+
+                            .box-skills {
+                                width: 100%;
+
+                                p {
+                                    font-size: 1.2rem;
+                                    color: $white;
+                                }
+                            }
+                            .box-images {
+                                width: 100%;
+
+                                img {
+                                    width: 100%;
+                                    max-width: 50px;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
