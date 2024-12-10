@@ -9,9 +9,6 @@
     text-decoration: none;
     font-family: "Outfit", sans-serif;
 }
-body {
-    overflow: hidden;
-}
 .fix-bg {  
     background-color: red;
 
@@ -106,12 +103,10 @@ body {
                 }
             }
         }
+
         header {
             position: fixed;
             left: 0;
-
-            @include flex-center;
-            align-items: flex-start;
 
             transform: translateX(-100%);
 
@@ -120,7 +115,6 @@ body {
             max-width: 250px;
 
             overflow-y: auto;
-            scrollbar-width: none;
 
             z-index: 10;
 
@@ -145,6 +139,7 @@ body {
                 align-items: flex-start;
                 gap: 10px;
                 
+                min-height: 100vh;
                 width: 100%;
     
                 .header-menu-box-1 {
@@ -155,57 +150,31 @@ body {
 
                     padding: 10px;
                     
-                    .box-01-profile {
+                    &.header-menu-box-1-active {
+                        .box-01-name {
+                            h2 {
+                                transform: translateY(0);
+                                opacity: 1;
+
+                                transition: .6s ease;
+                            }
+                        }
+                        .box-01-midia {
+                            transform: translateY(0);
+                            opacity: 1;
+
+                            transition: .6s ease-out;
+                        }
+                    }
+
+                    .box-01-name {
                         @include flex-center-column;
                         gap: 10px;
 
                         width: 100%;
 
-                        &.box-01-profile-active {
-                            .profile-pic {
-                                img {
-                                    transform: scale(1);
-                                    opacity: 1;
-
-                                    transition: transform 2s ease, opacity 1.5s;
-                                }
-                            }
-                            h2 {
-                                transform: translateY(0);
-                                opacity: 1;
-
-                                transition: 2s ease;
-
-                            }
-                        }
-                        
-                        .profile-pic {
-                            @include flex-center;
-
-                            width: 100%;
-
-                            img {
-                                @include flex-center;
-
-                                transform: scale(.5);
-
-                                width: 100%;
-
-                                opacity: 0;
-
-                                transition-delay: .4s;
-
-                                // Desktop
-                                @include desktop {
-                                    transform: scale(1);
-                                    opacity: 1;
-
-                                    transition: none;
-                                }
-                            }
-                        }
                         h2 {
-                            transform: translateY(-60px);
+                            transform: translateY(-20px);
 
                             width: 100%;
                             opacity: 0;
@@ -215,7 +184,7 @@ body {
                             font-weight: 600;
                             color: $white;
 
-                            transition-delay: .4s;
+                            transition-delay: .2s;
 
                             // Desktop
                             @include desktop {
@@ -245,10 +214,7 @@ body {
 
                             color: $gray-01;
                             
-                            .skills-text-01 {
-                                position: absolute;
-                            }
-                            .skills-text-02 {
+                            span {
                                 position: absolute;
                             }
                             .skills-text-hidden {
@@ -280,12 +246,6 @@ body {
                             transition: none;
                         }
 
-                        &.box-01-midia-active {
-                            transform: translateY(0);
-                            opacity: 1;
-
-                            transition: .6s ease-out;
-                        }
                         ul {
                             @include flex-center;
                             gap: 10px;
@@ -305,7 +265,7 @@ body {
                                 transition: background-color .4s;
 
                                 &:hover {
-                                    background-color: $turquoise;
+                                    background-color: $pink;
                                 }
 
                                 a {
@@ -367,11 +327,11 @@ body {
                                 &:hover {
                                     .link-image {
                                         img {
-                                            filter: brightness(0) saturate(100%) invert(30%) sepia(93%) saturate(7079%) hue-rotate(300deg) brightness(118%) contrast(115%);
+                                            filter: brightness(0) saturate(100%) invert(74%) sepia(28%) saturate(7162%) hue-rotate(129deg) brightness(100%) contrast(103%);
                                         }
                                     }
                                     .link-text {
-                                        color: $violet;
+                                        color: $turquoise;
                                     }
                                 }
                                 .link-image {
@@ -385,13 +345,13 @@ body {
 
                                         filter: brightness(0) saturate(100%) invert(100%) sepia(21%) saturate(7498%) hue-rotate(183deg) brightness(130%) contrast(95%);
 
-                                        transition: filter .8s;
+                                        transition: filter .4s;
                                     }
                                 }
                                 .link-text {
                                     color: $white;
 
-                                    transition: color .8s;
+                                    transition: color .4s;
                                 }
                             }
                             .list-link-01 {
@@ -413,7 +373,7 @@ body {
                     @include flex-center;
 
                     width: 100%;
-                    padding: 20px 20px 30px 20px;
+                    padding: 20px;
 
                     .box-03-cv {
                         position: relative;
@@ -510,19 +470,22 @@ body {
                 }
             }
         }
+
         main {
             height: 100vh;
             width: 100%;
 
             overflow: auto;
-            //scrollbar-width: none;
+            scrollbar-width: none;
 
             background-color: $midnightblue-01;
 
             .section-01 {
                 @include flex-center-column;
+                gap: 10px;
 
                 width: 100%;
+                padding-inline: 10px;
 
                 // w-900px
                 @include w-900px {
@@ -530,7 +493,7 @@ body {
                     align-items: stretch;
                     gap: 20px;
 
-                    padding: 70px 20px;
+                    padding: 80px 20px;
                 }
 
                 .section-01-c-info {
@@ -538,16 +501,14 @@ body {
                     gap: 20px;
 
                     width: 100%;
-                    padding: 50px 10px 0 10px;
+                    padding-top: 70px;
 
                     text-align: center;
 
                     // w-900px
                     @include w-900px {
-                        //justify-content: flex-end;
-
-                        padding: 0;
                         text-align: initial;
+                        padding: 0;
                     }
 
                     .info-c-title {
@@ -560,7 +521,7 @@ body {
 
                             // w-900px
                             @include w-900px {
-                                max-width: 200px;
+                                //max-width: 200px;
                             }
 
                             span {
@@ -572,19 +533,31 @@ body {
                         width: 100%;
 
                         p {
-                            font-size: 1.4rem;
+                            position: relative;
+
+                            @include flex-center;
+
+                            height: 33px;
+                            width: 100%;
+
+                            font-size: 1.6rem;
                             color: $turquoise;
+
+                            overflow: hidden;
 
                             // w-900px
                             @include w-900px {
-                                font-size: 1.6rem;
+                                justify-content: flex-start;
                             }
-
-                            .info-skills-text-01 {
-
+                            span {
+                                position: absolute;
                             }
-                            .info-skills-text-02 {
-
+                            .skills-text-animation {
+                                animation: scroll-skills-in .4s;
+                            }
+                            .skills-text-hidden {
+                                transform: translateY(-100%);
+                                animation: scroll-skills-out .4s;
                             }
                         }
                     }
@@ -592,7 +565,8 @@ body {
                         width: 100%;
 
                         p {
-                            font-size: 1.2rem;
+                            font-size: 1.3rem;
+                            line-height: 30px;
                             color: $gray-01;
                         }
                     }
@@ -601,115 +575,143 @@ body {
                         gap: 16px;
 
                         width: 100%;
+                        padding-top: 10px;
 
                         // w-900px
                         @include w-900px {
                             justify-content: flex-start;
-                            padding-top: 10px;
                         }
 
                         a {
+                            position: relative;
                             padding: 16px 30px;
 
                             border-radius: 30px;
 
                             font-size: 1.2rem;
-                            color: $midnightblue-01;
+                            overflow: hidden;
+
+                            z-index: 9;
+
+                            transition: color .4s;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+
+                                transform: translateY(-100%);
+
+                                height: 100%;
+                                width: 100%;
+
+                                z-index: -1;
+
+                                transition: transform .4s;
+                            }
+                            &:hover {
+                                color: $midnightblue-01;
+                                
+                                &::before {
+                                    transform: translateY(0);
+                                }
+                            }
                         }
                         .button-portfolio {
+                            color: $white;
                             background-color: $pink;
+
+                            &::before {
+                                background-color: $yellow;
+                            }
                         }
                         .button-contact {
+                            color: $midnightblue-01;
                             background-color: $turquoise;
+
+                            &::before {
+                                background-color: $yellow;
+                            }
                         }
                     }
                 }
                 .section-01-c-profile {
                     @include flex-center;
-
                     width: 100%;
-                    padding-inline: 10px;
+                    padding-block: 70px;
+                    overflow: hidden;
 
                     // w-900px
                     @include w-900px {
-                        align-items: flex-end;
                         padding: 0;
+                        overflow: initial;
+                    }
+
+                    // Desktop
+                    @include desktop {
+                        align-items: flex-end;
                     }
 
                     .profile-c-info {
                         position: relative;
-
                         @include flex-center;
-
                         width: 100%;
-                        padding-block: 70px;
-
-                        overflow: hidden;
 
                         text-align: center;
 
                         // w-900px
                         @include w-900px {
-                            padding: 0;
                             overflow: initial;
                         }
 
-                        .profile-image {
-                            //height: 500px;
+                        .profile-c-pic {
+                            position: relative;
+                            @include flex-center;
                             width: 100%;
-                            
-                            background-color: red;
+
+                            overflow: hidden;
+
+                            .profile-image {
+                                width: 100%;
+                            }
+                            .bg-profile-image, .profile-image-png {
+                                position: absolute;
+                                width: 100%;
+                            }
+                            .bg-profile-image {
+                                transform: translateX(100%);
+                                animation: infinite-translate 12s linear infinite;
+                            }
                         }
                         .circular-image {
                             position: absolute;
-                            top: 5px;
-                            left: -60px;
-
-                            height: 130px;
-                            width: 130px;
-
-                            // w-900px
-                            @include w-900px {
-                                top: -65px;
-                            }
-                        }
-                        .info-c-drop-box {
-                            position: absolute;
-                            bottom: 16px;
-
-                            @include flex-center-column;
-                            gap: 10px;
+                            top: -65px;
+                            left: -55px;
 
                             width: 100%;
-                            max-width: 80%;
+                            max-width: 130px;
 
-                            padding: 10px;
+                            animation: infinite-rotate 12s linear infinite;
 
-                            border-radius: 10px;
-
-                            background-color: blue;
-                            
                             // w-900px
                             @include w-900px {
-                                bottom: -54px;
+                                left: -65px;
                             }
+                        }
+                        .logo-image {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
 
-                            .box-skills {
-                                width: 100%;
+                            transform: translate(-45%, -50%);
 
-                                p {
-                                    font-size: 1.2rem;
-                                    color: $white;
-                                }
-                            }
-                            .box-images {
-                                width: 100%;
+                            width: 100%;
+                            max-width: 130px;
 
-                                img {
-                                    width: 100%;
-                                    max-width: 50px;
-
-                                }
+                            // w-900px
+                            @include w-900px {
+                               transform: translate(-50%, -50%);
                             }
                         }
                     }
@@ -719,6 +721,19 @@ body {
     }
 }
 
+@keyframes infinite-translate {
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@keyframes infinite-rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
 @keyframes scroll-skills-in {
     0% {
         transform: translateY(-100%);
