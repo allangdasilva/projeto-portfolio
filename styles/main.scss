@@ -303,7 +303,7 @@
                                     }
                                 }
                                 .link-text {
-                                    color: $gray-02;
+                                    opacity: .3;
                                 }
                             }
                         }
@@ -351,7 +351,7 @@
                                 .link-text {
                                     color: $white;
 
-                                    transition: color .4s;
+                                    transition: opacity .4s;
                                 }
                             }
                             .list-link-01 {
@@ -626,7 +626,7 @@
                             background-color: $pink;
 
                             &::before {
-                                background-color: $yellow;
+                                background-color: $yellow-01;
                             }
                         }
                         .button-contact {
@@ -634,7 +634,7 @@
                             background-color: $turquoise;
 
                             &::before {
-                                background-color: $yellow;
+                                background-color: $yellow-01;
                             }
                         }
                     }
@@ -661,8 +661,6 @@
 
                             width: 100%;
                             border-radius: 50%;
-                            box-shadow: 0 40px 40px -25px #00000080;
-
                             overflow: hidden;
 
                             // w-700px
@@ -690,44 +688,10 @@
                 }
             }
             .section-02 {
-                @include flex-center-column;
-                gap: 20px;
-
-                width: 100%;
-                padding: 20px 10px;
-
-                // w-900px
-                @include w-900px {
-                    padding: 20px 20px;
-                }
+                @include container-sections;
 
                 .section-02-c-title {
-                    @include flex-center;
-                    align-items: baseline;
-                    gap: 20px;
-                    
-                    width: 100%;
-
-                    h2 {
-                        width: 100%;
-                        max-width: fit-content;
-                        min-width: fit-content;
-
-                        font-size: 2rem;
-                        font-weight: 600;
-                        color: $white;
-
-                        // w-900px
-                        @include w-900px {
-                            font-size: 3rem
-                        }
-                    }
-                    .section-02-line {
-                        height: 2px;
-                        width: 100%;
-
-                        background-color: $gray-02;
-                    }
+                    @include title-sections;
                 }
                 .section-02-c-paragraph {
                     width: 100%;
@@ -796,6 +760,129 @@
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+            .section-03 {
+                @include container-sections;
+
+                .section-03-c-title {
+                    @include title-sections;
+                }
+                .section-03-c-content {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    justify-items: center;
+                    gap: 20px;
+
+                    width: 100%;
+
+                    // w-400px
+                    @include w-400px {
+                        grid-template-columns: 1fr 1fr;
+                    }
+                    // w-700px
+                    @include w-700px {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+
+                    .section-03-c-technologie {
+                        @include flex-center;
+
+                        gap: 10px;
+
+                        width: 100%;
+                        max-width: 180px;
+
+                        padding: 10px 20px;
+
+                        border-radius: 40px;
+                        border: 2px solid;
+
+                        // w-900px
+                        @include w-900px {
+                            max-width: 200px
+                        }
+
+                        .section-03-technologie-c-image {
+                            @include flex-center;
+
+                            width: 100%;
+                            max-width: 44px;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        .section-03-technologie-c-skill {
+                            width: 100%;
+
+                            .section-03-skill-counter {
+                                font-size: 1.6rem;
+                                font-weight: 600;
+
+                                color: $white;
+
+                                // w-900px
+                                @include w-900px {
+                                    font-size: 1.7rem;
+                                }
+                            }
+                            .section-03-technologie-name {
+                                // w-900px
+                                @include w-900px {
+                                    font-size: 1.1rem;
+                                }
+                            }
+                        }
+                    }
+                    .section-03-c-technologie:first-child {
+                        border-color: $orange-01;
+                        background-color: $orange-02;
+
+                        .section-03-technologie-name {
+                            color: $orange-01;
+                        }
+                    }
+                    .section-03-c-technologie:nth-child(2) {
+                        border-color: $blue-01;
+                        background-color: $blue-02;
+
+                        .section-03-technologie-name {
+                            color: $blue-01;
+                        }
+                    }
+                    .section-03-c-technologie:nth-child(3) {
+                        border-color: $yellow-01;
+                        background-color: $yellow-02;
+
+                        .section-03-technologie-name {
+                            color: $yellow-01;
+                        }
+                    }
+                    .section-03-c-technologie:nth-child(4) {
+                        border-color: $turquoise;
+                        background-color: $blue-02;
+
+                        .section-03-technologie-name {
+                            color: $turquoise;
+                        }
+                    }
+                    .section-03-c-technologie:nth-child(5) {
+                        border-color: $blue-01;
+                        background-color: $blue-02;
+
+                        .section-03-technologie-name {
+                            color: $blue-01;
+                        }
+                    }
+                    .section-03-c-technologie:last-child {
+                        border-color: $magenta-01;
+                        background-color: $magenta-02;
+
+                        .section-03-technologie-name {
+                            color: $magenta-01;
                         }
                     }
                 }

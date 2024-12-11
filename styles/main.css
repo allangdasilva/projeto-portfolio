@@ -261,7 +261,7 @@
   opacity: 0.3;
 }
 .fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul:has(.ul-list:hover) .list-link:not(:hover) .link-text {
-  color: rgba(255, 255, 255, 0.2196078431);
+  opacity: 0.3;
 }
 .fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul .ul-list {
   display: flex;
@@ -304,7 +304,7 @@
 }
 .fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul .ul-list .list-link .link-text {
   color: #F9F9F9;
-  transition: color 0.4s;
+  transition: opacity 0.4s;
 }
 .fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul .ul-list .list-link-01 {
   transition: transform 0.4s;
@@ -570,7 +570,6 @@
   align-items: center;
   width: 100%;
   border-radius: 50%;
-  box-shadow: 0 40px 40px -25px rgba(0, 0, 0, 0.5019607843);
   overflow: hidden;
 }
 @media screen and (min-width: 700px) {
@@ -631,7 +630,7 @@
     font-size: 3rem;
   }
 }
-.fix-bg .container-site main .section-02 .section-02-c-title .section-02-line {
+.fix-bg .container-site main .section-02 .section-02-c-title div {
   height: 2px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.2196078431);
@@ -701,6 +700,151 @@
 }
 .fix-bg .container-site main .section-02 .section-02-c-list .section-02-ul .section-02-li .section-02-text-info a:hover {
   text-decoration: underline;
+}
+.fix-bg .container-site main .section-03 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 10px;
+}
+@media screen and (min-width: 900px) {
+  .fix-bg .container-site main .section-03 {
+    padding: 20px 20px;
+  }
+}
+.fix-bg .container-site main .section-03 .section-03-c-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: baseline;
+  gap: 20px;
+  width: 100%;
+}
+.fix-bg .container-site main .section-03 .section-03-c-title h2 {
+  width: 100%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #F9F9F9;
+}
+@media screen and (min-width: 900px) {
+  .fix-bg .container-site main .section-03 .section-03-c-title h2 {
+    font-size: 3rem;
+  }
+}
+.fix-bg .container-site main .section-03 .section-03-c-title div {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2196078431);
+}
+.fix-bg .container-site main .section-03 .section-03-c-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 20px;
+  width: 100%;
+}
+@media screen and (min-width: 400px) {
+  .fix-bg .container-site main .section-03 .section-03-c-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 700px) {
+  .fix-bg .container-site main .section-03 .section-03-c-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 180px;
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 2px solid;
+}
+@media screen and (min-width: 900px) {
+  .fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie {
+    max-width: 200px;
+  }
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie .section-03-technologie-c-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 44px;
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie .section-03-technologie-c-image img {
+  width: 100%;
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie .section-03-technologie-c-skill {
+  width: 100%;
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie .section-03-technologie-c-skill .section-03-skill-counter {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #F9F9F9;
+}
+@media screen and (min-width: 900px) {
+  .fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie .section-03-technologie-c-skill .section-03-skill-counter {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 900px) {
+  .fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie .section-03-technologie-c-skill .section-03-technologie-name {
+    font-size: 1.1rem;
+  }
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:first-child {
+  border-color: #F16529;
+  background-color: rgba(228, 77, 38, 0.1019607843);
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:first-child .section-03-technologie-name {
+  color: #F16529;
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:nth-child(2) {
+  border-color: #33A9DC;
+  background-color: rgba(21, 114, 182, 0.1019607843);
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:nth-child(2) .section-03-technologie-name {
+  color: #33A9DC;
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:nth-child(3) {
+  border-color: #F2BC57;
+  background-color: rgba(240, 219, 79, 0.1019607843);
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:nth-child(3) .section-03-technologie-name {
+  color: #F2BC57;
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:nth-child(4) {
+  border-color: #04D9C4;
+  background-color: rgba(21, 114, 182, 0.1019607843);
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:nth-child(4) .section-03-technologie-name {
+  color: #04D9C4;
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:nth-child(5) {
+  border-color: #33A9DC;
+  background-color: rgba(21, 114, 182, 0.1019607843);
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:nth-child(5) .section-03-technologie-name {
+  color: #33A9DC;
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:last-child {
+  border-color: #D8267F;
+  background-color: rgba(188, 4, 191, 0.1019607843);
+}
+.fix-bg .container-site main .section-03 .section-03-c-content .section-03-c-technologie:last-child .section-03-technologie-name {
+  color: #D8267F;
 }
 
 @keyframes infinite-translate {

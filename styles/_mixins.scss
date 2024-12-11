@@ -1,5 +1,45 @@
 @use 'variables' as *;
 
+@mixin title-sections {
+    @include flex-center;
+    align-items: baseline;
+    gap: 20px;
+    
+    width: 100%;
+
+    h2 {
+        width: 100%;
+        max-width: fit-content;
+        min-width: fit-content;
+
+        font-size: 2rem;
+        font-weight: 600;
+        color: $white;
+
+        // w-900px
+        @include w-900px {
+            font-size: 3rem
+        }
+    }
+    div {
+        height: 2px;
+        width: 100%;
+
+        background-color: $gray-02;
+    }
+}
+@mixin container-sections {
+    @include flex-center-column;
+    gap: 20px;
+
+    width: 100%;
+    padding: 20px 10px;
+
+    // w-900px
+    @include w-900px {
+        padding: 20px 20px;
+    }
+}
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -28,6 +68,11 @@
 }
 @mixin w-500px {
     @media screen and (min-width: 500px) {
+        @content;
+    }
+}
+@mixin w-400px {
+    @media screen and (min-width: 400px) {
         @content;
     }
 }
