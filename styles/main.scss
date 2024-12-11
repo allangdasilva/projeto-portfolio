@@ -482,10 +482,10 @@
 
             .section-01 {
                 @include flex-center-column;
-                gap: 10px;
+                gap: 40px;
 
                 width: 100%;
-                padding-inline: 10px;
+                padding: 40px 10px 20px 10px;
 
                 // w-900px
                 @include w-900px {
@@ -493,7 +493,7 @@
                     align-items: stretch;
                     gap: 20px;
 
-                    padding: 80px 20px;
+                    padding: 40px 20px 20px 20px;
                 }
 
                 .section-01-c-info {
@@ -501,14 +501,11 @@
                     gap: 20px;
 
                     width: 100%;
-                    padding-top: 70px;
-
                     text-align: center;
 
                     // w-900px
                     @include w-900px {
                         text-align: initial;
-                        padding: 0;
                     }
 
                     .info-c-title {
@@ -565,13 +562,19 @@
                         width: 100%;
 
                         p {
-                            font-size: 1.3rem;
+                            font-size: 1.2rem;
                             line-height: 30px;
                             color: $gray-01;
+
+                            // w-900px
+                            @include w-900px {
+                                font-size: 1.3rem
+                            }
                         }
                     }
                     .info-c-buttons {
                         @include flex-center;
+                        flex-wrap: wrap;
                         gap: 16px;
 
                         width: 100%;
@@ -639,19 +642,6 @@
                 .section-01-c-profile {
                     @include flex-center;
                     width: 100%;
-                    padding-block: 70px;
-                    overflow: hidden;
-
-                    // w-900px
-                    @include w-900px {
-                        padding: 0;
-                        overflow: initial;
-                    }
-
-                    // Desktop
-                    @include desktop {
-                        align-items: flex-end;
-                    }
 
                     .profile-c-info {
                         position: relative;
@@ -668,9 +658,21 @@
                         .profile-c-pic {
                             position: relative;
                             @include flex-center;
+
                             width: 100%;
+                            border-radius: 50%;
+                            box-shadow: 0 40px 40px -25px #00000080;
 
                             overflow: hidden;
+
+                            // w-700px
+                            @include w-700px {
+                                max-width: 80%;
+                            }
+                            // w-900px
+                            @include w-900px {
+                                max-width: 100%;
+                            }
 
                             .profile-image {
                                 width: 100%;
@@ -684,29 +686,115 @@
                                 animation: infinite-translate 16s linear infinite;
                             }
                         }
-                        .circular-image {
-                            position: absolute;
-                            top: -65px;
-                            left: -65px;
+                    }
+                }
+            }
+            .section-02 {
+                @include flex-center-column;
+                gap: 20px;
 
-                            width: 100%;
-                            max-width: 130px;
+                width: 100%;
+                padding: 20px 10px;
 
-                            animation: infinite-rotate 12s linear infinite;
+                // w-900px
+                @include w-900px {
+                    padding: 20px 20px;
+                }
+
+                .section-02-c-title {
+                    @include flex-center;
+                    align-items: baseline;
+                    gap: 20px;
+                    
+                    width: 100%;
+
+                    h2 {
+                        width: 100%;
+                        max-width: fit-content;
+                        min-width: fit-content;
+
+                        font-size: 2rem;
+                        font-weight: 600;
+                        color: $white;
+
+                        // w-900px
+                        @include w-900px {
+                            font-size: 3rem
                         }
-                        .logo-image {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
+                    }
+                    .section-02-line {
+                        height: 2px;
+                        width: 100%;
 
-                            transform: translate(-45%, -50%);
+                        background-color: $gray-02;
+                    }
+                }
+                .section-02-c-paragraph {
+                    width: 100%;
 
-                            width: 100%;
-                            max-width: 100px;
+                    p {
+                        font-size: 1.2rem;
+                        line-height: 30px;
+                        color: $gray-01;
 
-                            // w-900px
-                            @include w-900px {
-                               transform: translate(-50%, -50%);
+                        // w-900px
+                        @include w-900px {
+                            font-size: 1.3rem
+                        }
+
+                        span {
+                            color: $white;
+                        }
+                    }
+                }
+                .section-02-c-list {
+                    width: 100%;
+                    padding-top: 10px;
+
+                    .section-02-ul {
+                        @include flex-center-column;
+                        gap: 20px;
+                        align-items: flex-start;
+                        width: 100%;
+
+                        .section-02-li {
+                            @include flex-center;
+                            justify-content: flex-start;
+
+                            p {
+                                position: relative;
+                                font-size: 1.2rem;
+
+                                // w-900px
+                                @include w-900px {
+                                    font-size: 1.3rem
+                                }
+                            }
+                            .section-02-text-about {
+                                max-width: 140px;
+                                min-width: 140px;
+                                color: $gray-01;
+                            }
+                            .section-02-text-info {
+                                padding-left: 20px;
+                                word-break: break-all;
+                                color: $white;
+
+                                &::before {
+                                    content: ':';
+                                    position: absolute;
+                                    left: 0;
+
+                                    color: $gray-01;
+                                }
+
+                                a {
+                                    color: $white;
+
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
                             }
                         }
                     }
@@ -719,14 +807,6 @@
 @keyframes infinite-translate {
     100% {
         transform: translateX(-100%);
-    }
-}
-@keyframes infinite-rotate {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(1turn);
     }
 }
 @keyframes scroll-skills-in {
