@@ -257,6 +257,12 @@
   align-items: center;
   width: 100%;
 }
+.fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul:has(.ul-list:hover) .list-link:not(:hover) .link-image img {
+  opacity: 0.3;
+}
+.fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul:has(.ul-list:hover) .list-link:not(:hover) .link-text {
+  color: rgba(255, 255, 255, 0.2196078431);
+}
 .fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul .ul-list {
   display: flex;
   justify-content: center;
@@ -285,12 +291,6 @@
 .fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul .ul-list .list-link.list-link-active {
   transform: translateX(0);
 }
-.fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul .ul-list .list-link:hover .link-image img {
-  filter: brightness(0) saturate(100%) invert(74%) sepia(28%) saturate(7162%) hue-rotate(129deg) brightness(100%) contrast(103%);
-}
-.fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul .ul-list .list-link:hover .link-text {
-  color: #04D9C4;
-}
 .fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul .ul-list .list-link .link-image {
   display: flex;
   justify-content: center;
@@ -300,8 +300,7 @@
 }
 .fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul .ul-list .list-link .link-image img {
   width: 100%;
-  filter: brightness(0) saturate(100%) invert(100%) sepia(21%) saturate(7498%) hue-rotate(183deg) brightness(130%) contrast(95%);
-  transition: filter 0.4s;
+  transition: opacity 0.4s;
 }
 .fix-bg .container-site header .c-header-menu .header-menu-box-2 .box-02-ul .ul-list .list-link .link-text {
   color: #F9F9F9;
@@ -590,20 +589,15 @@
 }
 .fix-bg .container-site main .section-01 .section-01-c-profile .profile-c-info .profile-c-pic .bg-profile-image {
   transform: translateX(100%);
-  animation: infinite-translate 12s linear infinite;
+  animation: infinite-translate 16s linear infinite;
 }
 .fix-bg .container-site main .section-01 .section-01-c-profile .profile-c-info .circular-image {
   position: absolute;
   top: -65px;
-  left: -55px;
+  left: -65px;
   width: 100%;
   max-width: 130px;
   animation: infinite-rotate 12s linear infinite;
-}
-@media screen and (min-width: 900px) {
-  .fix-bg .container-site main .section-01 .section-01-c-profile .profile-c-info .circular-image {
-    left: -65px;
-  }
 }
 .fix-bg .container-site main .section-01 .section-01-c-profile .profile-c-info .logo-image {
   position: absolute;
@@ -611,7 +605,7 @@
   left: 0;
   transform: translate(-45%, -50%);
   width: 100%;
-  max-width: 130px;
+  max-width: 100px;
 }
 @media screen and (min-width: 900px) {
   .fix-bg .container-site main .section-01 .section-01-c-profile .profile-c-info .logo-image {

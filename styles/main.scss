@@ -295,6 +295,19 @@
 
                         width: 100%;
 
+                        &:has(.ul-list:hover) {
+                            .list-link:not(:hover) {
+                                .link-image {
+                                    img {
+                                        opacity: .3;
+                                    }
+                                }
+                                .link-text {
+                                    color: $gray-02;
+                                }
+                            }
+                        }
+
                         .ul-list {
                             @include flex-center;
 
@@ -324,16 +337,6 @@
                                 &.list-link-active {
                                     transform: translateX(0);
                                 }
-                                &:hover {
-                                    .link-image {
-                                        img {
-                                            filter: brightness(0) saturate(100%) invert(74%) sepia(28%) saturate(7162%) hue-rotate(129deg) brightness(100%) contrast(103%);
-                                        }
-                                    }
-                                    .link-text {
-                                        color: $turquoise;
-                                    }
-                                }
                                 .link-image {
                                     @include flex-center;
 
@@ -342,10 +345,7 @@
 
                                     img {
                                         width: 100%;
-
-                                        filter: brightness(0) saturate(100%) invert(100%) sepia(21%) saturate(7498%) hue-rotate(183deg) brightness(130%) contrast(95%);
-
-                                        transition: filter .4s;
+                                        transition: opacity .4s;
                                     }
                                 }
                                 .link-text {
@@ -681,23 +681,18 @@
                             }
                             .bg-profile-image {
                                 transform: translateX(100%);
-                                animation: infinite-translate 12s linear infinite;
+                                animation: infinite-translate 16s linear infinite;
                             }
                         }
                         .circular-image {
                             position: absolute;
                             top: -65px;
-                            left: -55px;
+                            left: -65px;
 
                             width: 100%;
                             max-width: 130px;
 
                             animation: infinite-rotate 12s linear infinite;
-
-                            // w-900px
-                            @include w-900px {
-                                left: -65px;
-                            }
                         }
                         .logo-image {
                             position: absolute;
@@ -707,7 +702,7 @@
                             transform: translate(-45%, -50%);
 
                             width: 100%;
-                            max-width: 130px;
+                            max-width: 100px;
 
                             // w-900px
                             @include w-900px {
