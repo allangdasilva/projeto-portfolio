@@ -747,8 +747,9 @@
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  gap: 20px;
+  gap: 30px;
   width: 100%;
+  padding-block: 10px;
 }
 @media screen and (min-width: 400px) {
   .fix-bg .container-site main .section-03 .section-03-c-content {
