@@ -889,7 +889,25 @@
                 }
             }
             .section-04 {
+                @include container-sections;
 
+                .section-04-c-title {
+                    @include title-sections;
+                }
+                .section-04-c-content {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+
+                    width: 100%;
+
+                    div {
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
             }
             .section-05 {
                 @include container-sections;
