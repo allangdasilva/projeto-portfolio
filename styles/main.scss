@@ -1136,7 +1136,7 @@
                             }
                             h3 {
                                 font-size: 1.6rem;
-                                font-weight: 500;
+                                font-weight: 400;
 
                                 // w-900px
                                 @include w-900px {
@@ -1156,6 +1156,22 @@
                                     font-size: 1.3rem;
                                 }
                             }
+                            .section-05-service-c-turn-around {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+    
+                                width: 100%;
+                                max-width: 35px;
+                                
+                                padding: 10px;
+                                
+                                transform: translate3d(0, 0, 40px);
+                                
+                                img {
+                                    width: 100%;
+                                }
+                            }
                         }
                         .section-05-service-c-back {
                             position: absolute;
@@ -1163,6 +1179,7 @@
                             transform: rotateY(180deg);
                             backface-visibility: hidden;
                         }
+                        
                     }
                 }
             }

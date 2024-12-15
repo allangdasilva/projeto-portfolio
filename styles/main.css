@@ -1131,7 +1131,7 @@
 }
 .fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-front h3, .fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-back h3 {
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 @media screen and (min-width: 900px) {
   .fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-front h3, .fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-back h3 {
@@ -1148,6 +1148,18 @@
   .fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-front p, .fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-back p {
     font-size: 1.3rem;
   }
+}
+.fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-front .section-05-service-c-turn-around, .fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-back .section-05-service-c-turn-around {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 35px;
+  padding: 10px;
+  transform: translate3d(0, 0, 40px);
+}
+.fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-front .section-05-service-c-turn-around img, .fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-back .section-05-service-c-turn-around img {
+  width: 100%;
 }
 .fix-bg .container-site main .section-05 .section-05-c-content .section-05-c-service .section-05-service-c-back {
   position: absolute;
