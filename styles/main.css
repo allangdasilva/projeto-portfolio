@@ -1144,6 +1144,148 @@
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
+.fix-bg .container-site main .section-06 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 10px;
+}
+@media screen and (min-width: 900px) {
+  .fix-bg .container-site main .section-06 {
+    padding: 20px 20px;
+  }
+}
+.fix-bg .container-site main .section-06 .section-06-c-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: baseline;
+  gap: 20px;
+  width: 100%;
+}
+.fix-bg .container-site main .section-06 .section-06-c-title h2 {
+  width: 100%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #F9F9F9;
+}
+@media screen and (min-width: 900px) {
+  .fix-bg .container-site main .section-06 .section-06-c-title h2 {
+    font-size: 3rem;
+  }
+}
+.fix-bg .container-site main .section-06 .section-06-c-title div {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2196078431);
+}
+.fix-bg .container-site main .section-06 .section-06-c-form {
+  width: 100%;
+  padding-block: 10px;
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+@media screen and (min-width: 700px) {
+  .fix-bg .container-site main .section-06 .section-06-c-form form {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    row-gap: 40px;
+  }
+  .fix-bg .container-site main .section-06 .section-06-c-form form div:nth-child(1), .fix-bg .container-site main .section-06 .section-06-c-form form div:nth-child(2), .fix-bg .container-site main .section-06 .section-06-c-form form div:nth-child(3), .fix-bg .container-site main .section-06 .section-06-c-form form div:nth-child(4) {
+    width: calc(50% - 5px);
+  }
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-name, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-email, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-subject, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-name label, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-email label, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-subject label, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-message label {
+  font-size: 1.2rem;
+  color: #B2B2B2;
+}
+@media screen and (min-width: 900px) {
+  .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-name label, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-email label, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-subject label, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-message label {
+    font-size: 1.3rem;
+  }
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-name input, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-email input, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-subject input, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-message input {
+  position: relative;
+  width: 100%;
+  padding-block: 10px;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2196078431);
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #F9F9F9;
+  background-color: transparent;
+}
+@media screen and (min-width: 900px) {
+  .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-name input, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-email input, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-subject input, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-message input {
+    font-size: 1.3rem;
+  }
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-name input::-moz-placeholder, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-email input::-moz-placeholder, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-subject input::-moz-placeholder, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-message input::-moz-placeholder {
+  color: #F9F9F9;
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-name input::placeholder, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-email input::placeholder, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-subject input::placeholder, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-message input::placeholder {
+  color: #F9F9F9;
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-name input:focus, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-email input:focus, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-subject input:focus, .fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-message input:focus {
+  border-bottom-color: #F22294;
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-submit {
+  position: relative;
+  padding: 0;
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: 9;
+  background-color: #04D9C4;
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-submit::before {
+  content: "";
+  position: absolute;
+  transform: translateY(-100%);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: #F2BC57;
+  transition: transform 0.4s;
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-submit:has(input:hover)::before {
+  transform: translateY(0);
+}
+.fix-bg .container-site main .section-06 .section-06-c-form form .section-06-c-submit input {
+  font-size: 1.2rem;
+  padding: 16px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #151426;
+  background-color: transparent;
+}
 
 @keyframes infinite-translate {
   100% {

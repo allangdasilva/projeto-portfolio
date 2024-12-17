@@ -586,40 +586,7 @@
                         }
 
                         a {
-                            position: relative;
-                            padding: 16px 30px;
-
-                            border-radius: 30px;
-
-                            font-size: 1.2rem;
-                            overflow: hidden;
-
-                            z-index: 9;
-
-                            transition: color .4s;
-
-                            &::before {
-                                content: '';
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-
-                                transform: translateY(-100%);
-
-                                height: 100%;
-                                width: 100%;
-
-                                z-index: -1;
-
-                                transition: transform .4s;
-                            }
-                            &:hover {
-                                color: $midnightblue-01;
-                                
-                                &::before {
-                                    transform: translateY(0);
-                                }
-                            }
+                            @include button-style;
                         }
                         .button-portfolio {
                             color: $white;
@@ -1161,6 +1128,133 @@
                             transform: rotateY(180deg);
                             backface-visibility: hidden;
                         }        
+                    }
+                }
+            }
+            .section-06 {
+                @include container-sections;
+
+                .section-06-c-title {
+                    @include title-sections;
+                }
+                .section-06-c-form {
+                    width: 100%;
+                    padding-block: 10px;
+
+                    form {
+                        @include flex-center-column;
+                        align-items: flex-start;
+                        gap: 40px;
+
+                        width: 100%;
+
+                        // w-700px
+                        @include w-700px {
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            flex-wrap: wrap;
+                            column-gap: 10px;
+                            row-gap: 40px;
+
+                            div:nth-child(1), div:nth-child(2), div:nth-child(3), div:nth-child(4) {
+                                width: calc(50% - 5px);
+                            }
+                        }
+
+                        .section-06-c-name, .section-06-c-email, .section-06-c-subject, .section-06-c-message {
+                            @include flex-center-column;
+                            align-items: flex-start;
+                            gap: 10px;
+
+                            width: 100%;
+
+                            label {
+                                font-size: 1.2rem;
+                                color: $gray-01;
+
+                                // w-900px
+                                @include w-900px{
+                                    font-size: 1.3rem;
+                                }
+                            }
+                            input {
+                                position: relative;
+
+                                width: 100%;
+
+                                padding-block: 10px;
+
+                                border: none;
+                                border-bottom: 2px solid $gray-02;
+                                outline: none;
+
+                                font-size: 1.2rem;
+                                font-weight: 500;
+
+                                color: $white;
+
+                                background-color: transparent;
+
+                                // w-900px
+                                @include w-900px{
+                                    font-size: 1.3rem;
+                                }
+
+                                &::placeholder {
+                                    color: $white;
+                                }
+                                &:focus {
+                                    border-bottom-color: $pink-01;
+                                }
+                            }
+                        }
+                        .section-06-c-submit {
+                            position: relative;
+
+                            padding: 0;
+                            border-radius: 30px;
+
+                            overflow: hidden;
+                            z-index: 9;
+
+                            background-color: $turquoise;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+
+                                transform: translateY(-100%);
+
+                                height: 100%;
+                                width: 100%;
+
+                                z-index: -1;
+
+                                background-color: $yellow-01;
+
+                                transition: transform .4s;
+                            }
+
+                            &:has(input:hover){
+                                &::before {
+                                    transform: translateY(0);
+                                }
+                            }
+
+                            input {
+                                font-size: 1.2rem;
+                                padding: 16px 30px;
+
+                                border: none;
+                                border-radius: 30px;
+
+                                cursor: pointer;
+
+                                color: $midnightblue-01;
+
+                                background-color: transparent;
+                            }
+                        }
                     }
                 }
             }
