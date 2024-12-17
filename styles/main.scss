@@ -1258,6 +1258,14 @@
                     }
                 }
             }
+            footer {
+                @include container-sections;
+
+                p {
+                    font-size: 1.1rem;
+                    color: $gray-02;
+                }
+            }
         }
     }
 }

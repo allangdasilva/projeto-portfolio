@@ -1286,6 +1286,24 @@
   color: #151426;
   background-color: transparent;
 }
+.fix-bg .container-site main footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 10px;
+}
+@media screen and (min-width: 900px) {
+  .fix-bg .container-site main footer {
+    padding: 20px 20px;
+  }
+}
+.fix-bg .container-site main footer p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.2196078431);
+}
 
 @keyframes infinite-translate {
   100% {
