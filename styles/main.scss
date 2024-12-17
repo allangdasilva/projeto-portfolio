@@ -993,21 +993,14 @@
 
                                 transition: filter .4s;
                             }
-                            .section-04-portfolio-thumb-effect,.section-04-portfolio-thumb-c-text {
+                            .section-04-portfolio-thumb-c-text {
                                 position: absolute;
+
+                                @include flex-center-column;
+                                gap: 20px; 
 
                                 height: 100%;
                                 width: 100%;
-
-                                transition: all .4s ease-out;
-                            }
-                            .section-04-portfolio-thumb-effect {
-                                transform: translateY(-101%);
-                                background-color: $pink-02;
-                            }
-                            .section-04-portfolio-thumb-c-text {
-                                @include flex-center-column;
-                                gap: 20px; 
                             
                                 padding: 20px;
                                 text-align: center;
@@ -1015,6 +1008,8 @@
                                 opacity: 0;
 
                                 transform: translateY(50%);
+
+                                transition: all .4s ease-out;
 
                                 p {
                                     pointer-events: none;
@@ -1028,16 +1023,16 @@
                                     width: 100%;
                                     max-width: 45px;
 
-                                    padding: 6px;
+                                    padding: 8px;
 
                                     border-radius: 50%;
-                                    background-color: $white;
+                                    background-color: $gray-02;
 
                                     img {
                                         width: 100%;
                                         transform: rotate(-45deg);
 
-                                        filter: brightness(0) saturate(100%) invert(35%) sepia(93%) saturate(5698%) hue-rotate(312deg) brightness(97%) contrast(95%);
+                                        filter: brightness(0) saturate(100%) invert(73%) sepia(20%) saturate(7385%) hue-rotate(126deg) brightness(99%) contrast(97%);
                                     }
                                 }
                             }
@@ -1053,8 +1048,19 @@
                             
                             a {
                                 width: 100%;
+                                padding-block: 5px;
+
+                                &:hover {
+                                    p {
+                                        text-decoration: underline;
+                                    }
+                                }
 
                                 p {
+                                    position: relative;
+
+                                    width: max-content;
+
                                     font-size: 1.4rem;
                                     font-weight: 400;
                                     color: $white;
@@ -1087,7 +1093,7 @@
                     }
                     .section-05-c-service {
                         position: relative;
-                        @include flex-center-column;
+                        @include flex-center;
 
                         width: 100%;
 
@@ -1109,10 +1115,10 @@
                         }
 
                         .section-05-service-c-front, .section-05-service-c-back {
-                            @include flex-center-column;
+                            @include flex-center;
                             gap: 10px;
 
-                            height: 100%;
+                            height: 180px;
                             width: 100%;
 
                             padding: 30px 20px;
@@ -1124,19 +1130,11 @@
 
                             transition: transform 1s;
 
-                            img, h3 {
-                                transform: translate3d(0, 0, 80px);
-                            }
-                            img {
-                                max-height: 80px;
-                                width: 100%;
-                                max-width: 100px;
-
-                                object-fit: contain;
-                            }
                             h3 {
                                 font-size: 1.6rem;
                                 font-weight: 400;
+
+                                transform: translate3d(0, 0, 80px);
 
                                 // w-900px
                                 @include w-900px {
@@ -1156,30 +1154,13 @@
                                     font-size: 1.3rem;
                                 }
                             }
-                            .section-05-service-c-turn-around {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-    
-                                width: 100%;
-                                max-width: 35px;
-                                
-                                padding: 10px;
-                                
-                                transform: translate3d(0, 0, 40px);
-                                
-                                img {
-                                    width: 100%;
-                                }
-                            }
                         }
                         .section-05-service-c-back {
                             position: absolute;
 
                             transform: rotateY(180deg);
                             backface-visibility: hidden;
-                        }
-                        
+                        }        
                     }
                 }
             }
