@@ -1,0 +1,68 @@
+@use 'reset' as *;
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.fix-form-bg {
+    @include fix-bg;
+
+    .container-form {
+        @include flex-center;
+
+        height: 100vh;
+        width: 100%;
+        max-width: 1200px;
+
+        margin-inline: auto;
+        overflow-y: auto;
+
+        @include scroll-bar;
+
+        padding-inline: 10px;
+
+        // w-500px
+        @include w-500px {
+            max-width: 500px;
+        }
+        // w-700px
+        @include w-700px {
+            max-width: 700px;
+        }
+        // w-900px
+        @include w-900px {
+            max-width: 900px;
+        }
+        // Desktop
+        @include desktop {
+            max-width: 1200px;
+        }
+
+        .section-c-form {
+            @include flex-center-column;
+            gap: 20px;
+            
+            height: 100%;
+            width: 100%;
+            text-align: center;
+
+            background-color: $midnightblue-01;
+
+            h1 {
+                word-break: break-all;
+                font-size: 3.6rem;
+                color: $white;
+            }
+            p {
+                font-size: 1.2rem;
+                color: $gray-01;
+            }
+            a {
+                position: relative;
+
+                @include button-style;
+
+                color: $white;
+                background-color: $pink-01;
+            }
+        }
+    }
+}

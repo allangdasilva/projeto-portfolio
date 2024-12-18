@@ -1,5 +1,21 @@
 @use 'variables' as *;
+@use 'reset' as *;
 
+@mixin fix-bg {
+    background-image: url(../images/bg-light.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: color-dodge;
+    background-color: $midnightblue-03;
+}
+@mixin scroll-bar {
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $turquoise;
+    }
+}
 @mixin title-sections {
     @include flex-center;
     align-items: baseline;
@@ -65,6 +81,8 @@
         width: 100%;
 
         z-index: -1;
+
+        background-color: $yellow-01;
 
         transition: transform .4s;
     }

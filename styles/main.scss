@@ -1,16 +1,11 @@
+@use 'reset' as *;
 @use 'variables' as *;
 @use 'mixins' as *;
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: "Outfit", sans-serif;
-}
+@use 'form-submit' as *;
+
 .fix-bg {  
-    background-color: red;
+    @include fix-bg;
 
     .container-site {
         position: relative;
@@ -475,8 +470,8 @@
             height: 100vh;
             width: 100%;
 
-            overflow: auto;
-            scrollbar-width: none;
+            overflow-y: auto;
+            @include scroll-bar;
 
             background-color: $midnightblue-01;
 
@@ -591,18 +586,10 @@
                         .button-portfolio {
                             color: $white;
                             background-color: $pink-01;
-
-                            &::before {
-                                background-color: $yellow-01;
-                            }
                         }
                         .button-contact {
                             color: $midnightblue-01;
                             background-color: $turquoise;
-
-                            &::before {
-                                background-color: $yellow-01;
-                            }
                         }
                     }
                 }
@@ -645,6 +632,7 @@
                             .bg-profile-image, .profile-image-png {
                                 position: absolute;
                                 width: 100%;
+                                border-radius: 50%;
                             }
                             .bg-profile-image {
                                 transform: translateX(100%);
