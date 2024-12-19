@@ -44,7 +44,7 @@
             width: 100%;
             text-align: center;
 
-            background-color: $midnightblue-01;
+            background-color: $bg-color-02;
 
             h1 {
                 word-break: break-all;
@@ -52,16 +52,11 @@
                 color: $white;
             }
             p {
-                font-size: 1.2rem;
-                color: $gray-01;
+                @include text-p-style;
+                line-height: initial;
             }
             a {
-                position: relative;
-
                 @include button-style;
-
-                color: $white;
-                background-color: $pink-01;
             }
         }
     }

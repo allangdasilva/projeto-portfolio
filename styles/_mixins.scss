@@ -2,18 +2,17 @@
 @use 'reset' as *;
 
 @mixin fix-bg {
-    background-image: url(../images/bg-light.png);
+    background-image: url(../images/bg.png);
     background-size: cover;
     background-position: center;
-    background-blend-mode: color-dodge;
-    background-color: $midnightblue-03;
+    background-color: $bg-color-01;
 }
 @mixin scroll-bar {
     &::-webkit-scrollbar {
         width: 4px;
     }
     &::-webkit-scrollbar-thumb {
-        background-color: $turquoise;
+        background-color: $bg-color-02;
     }
 }
 @mixin title-sections {
@@ -41,7 +40,8 @@
         height: 2px;
         width: 100%;
 
-        background-color: $gray-02;
+        opacity: $opacity-01;
+        background-color: $white;
     }
 }
 @mixin container-sections {
@@ -56,16 +56,42 @@
         padding: 20px 20px;
     }
 }
+@mixin text-p-style-02 {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 400;
+
+    text-decoration: underline;
+
+    color: $bg-color-04;
+}
+@mixin text-p-style {
+    font-size: 1.2rem;
+    line-height: 30px;
+
+    opacity: .8;
+
+    color: $white;
+
+    // w-900px
+    @include w-900px {
+        font-size: 1.3rem
+    }
+}
 @mixin button-style {
     position: relative;
     padding: 16px 30px;
 
+    border: $border-01;
     border-radius: 30px;
 
     font-size: 1.2rem;
     overflow: hidden;
 
     z-index: 9;
+
+    color: $white;
+    background-color: $bg-color-02;
 
     transition: color .4s;
 
@@ -87,7 +113,7 @@
         transition: transform .4s;
     }
     &:hover {
-        color: $midnightblue-01;
+        color: $bg-color-01;
         
         &::before {
             transform: translateY(0);

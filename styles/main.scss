@@ -50,7 +50,7 @@
 
             z-index: 10;
 
-            background-color: black;
+            background-color: $bg-color-02;
 
             // Desktop
             @include desktop {
@@ -63,7 +63,7 @@
                 height: 2px;
                 width: 25px;
 
-                background-color: white;
+                background-color: $white;
 
                 transition: opacity .2s;
 
@@ -113,7 +113,9 @@
 
             z-index: 10;
 
-            background-color: $midnightblue-02;
+            border-left: $border-01;
+
+            background-color: $bg-color-01;
 
             transition: transform .4s;
 
@@ -121,6 +123,8 @@
             @include desktop {
                 position: initial;
                 transform: translateX(0);
+
+                background-color: $bg-color-02;
 
                 transition: none;
             }
@@ -207,7 +211,9 @@
 
                             overflow: hidden;
 
-                            color: $gray-01;
+                            color: $white;
+
+                            opacity: .8;
                             
                             span {
                                 position: absolute;
@@ -255,12 +261,12 @@
 
                                 border-radius: 50%;
 
-                                background-color: $midnightblue-01;
+                                background-color: $bg-color-02;
 
                                 transition: background-color .4s;
 
                                 &:hover {
-                                    background-color: $pink-01;
+                                    background-color: $bg-color-04;
                                 }
 
                                 a {
@@ -274,6 +280,8 @@
                                         max-width: 20px;
 
                                         filter: brightness(0) saturate(100%) invert(100%) sepia(21%) saturate(7498%) hue-rotate(183deg) brightness(130%) contrast(95%);
+
+                                        transition: filter .4s;
                                     }
                                 }
                             }
@@ -308,10 +316,10 @@
 
                             width: 100%;
 
-                            border-bottom: 1px solid $gray-02;
+                            border-bottom: 1px solid $border-color-01;
 
                             &:first-child {
-                                border-top: 1px solid $gray-02;
+                                border-top: 1px solid $border-color-01;
                             }
                             .list-link {
                                 @include flex-center;
@@ -379,24 +387,21 @@
                         height: 60px;
                         width: 100%;
 
+                        border: $border-01;
                         border-radius: 30px;
 
-                        overflow: hidden;
+                        overflow: hidden;   
 
-                        background-color: $midnightblue-01;
+                        background-color: $bg-color-02;
 
                         transition: background-color .4s;
 
                         &:hover {
-                            background-color: $turquoise;
+                            background-color: $bg-color-01;
 
                             .cv-image {
-                                transform: translateX(305%);
-                                background-color: $white;
-
-                                img {
-                                    filter: brightness(0) saturate(100%) invert(67%) sepia(11%) saturate(3820%) hue-rotate(125deg) brightness(97%) contrast(97%);
-                                }
+                                transform: translateX(300%);
+                                background-color: $bg-color-02;
                             }
                             .cv-text {
 
@@ -422,9 +427,10 @@
                             width: 100%;
                             max-width: 48px;
 
+                            border: $border-01;
                             border-radius: 50%;
 
-                            background-color: $turquoise;
+                            background-color: $bg-color-01;
 
                             z-index: 10;
 
@@ -450,7 +456,7 @@
                                 color: $white;
                             }
                             .text-download {
-                                transform: translateX(50%);
+                                transform: translateX(45%);
                                 transition: transform .6s, opacity .3s;
                             }
                             .text-hover {
@@ -473,7 +479,7 @@
             overflow-y: auto;
             @include scroll-bar;
 
-            background-color: $midnightblue-01;
+            background-color: $bg-color-03;
 
             .section-01 {
                 @include flex-center-column;
@@ -498,6 +504,8 @@
                     width: 100%;
                     text-align: center;
 
+                    overflow: hidden;
+
                     // w-900px
                     @include w-900px {
                         text-align: initial;
@@ -505,19 +513,14 @@
 
                     .info-c-title {
                         width: 100%;
-                        
+
                         h2 {
                             font-size: 5rem;
                             font-weight: 600;
                             color: $white;
 
-                            // w-900px
-                            @include w-900px {
-                                //max-width: 200px;
-                            }
-
                             span {
-                                font-weight: 400;
+                                @include text-p-style-02;
                             }
                         }
                     }
@@ -533,7 +536,7 @@
                             width: 100%;
 
                             font-size: 1.6rem;
-                            color: $turquoise;
+                            color: $bg-color-04;
 
                             overflow: hidden;
 
@@ -557,14 +560,7 @@
                         width: 100%;
 
                         p {
-                            font-size: 1.2rem;
-                            line-height: 30px;
-                            color: $gray-01;
-
-                            // w-900px
-                            @include w-900px {
-                                font-size: 1.3rem
-                            }
+                            @include text-p-style;
                         }
                     }
                     .info-c-buttons {
@@ -582,14 +578,6 @@
 
                         a {
                             @include button-style;
-                        }
-                        .button-portfolio {
-                            color: $white;
-                            background-color: $pink-01;
-                        }
-                        .button-contact {
-                            color: $midnightblue-01;
-                            background-color: $turquoise;
                         }
                     }
                 }
@@ -652,14 +640,7 @@
                     width: 100%;
 
                     p {
-                        font-size: 1.2rem;
-                        line-height: 30px;
-                        color: $gray-01;
-
-                        // w-900px
-                        @include w-900px {
-                            font-size: 1.3rem
-                        }
+                        @include text-p-style;
 
                         span {
                             color: $white;
@@ -669,6 +650,8 @@
                 .section-02-c-list {
                     width: 100%;
                     padding-top: 10px;
+
+                    overflow: hidden;
 
                     .section-02-ul {
                         @include flex-center-column;
@@ -681,21 +664,18 @@
                             justify-content: flex-start;
 
                             p {
-                                position: relative;
-                                font-size: 1.2rem;
-
-                                // w-900px
-                                @include w-900px {
-                                    font-size: 1.3rem
-                                }
+                                @include text-p-style;
                             }
                             .section-02-text-about {
                                 max-width: 140px;
                                 min-width: 140px;
-                                color: $gray-01;
                             }
                             .section-02-text-info {
+                                position: relative;
+                                
                                 padding-left: 20px;
+                                opacity: 1;
+
                                 word-break: break-all;
                                 color: $white;
 
@@ -703,8 +683,6 @@
                                     content: ':';
                                     position: absolute;
                                     left: 0;
-
-                                    color: $gray-01;
                                 }
 
                                 a {
@@ -733,6 +711,8 @@
 
                     width: 100%;
                     padding-block: 10px;
+
+                    overflow: hidden;
 
                     // w-400px
                     @include w-400px {
@@ -928,23 +908,30 @@
 
                             width: 100%;
 
-                            border-radius: 20px;
+                            border: $border-01;
+                            border-color: transparent;
+
+                            border-radius: 8px;
 
                             overflow: hidden;
 
+                            transition: border-color .4s;
+
                             &:hover {
+                                border-color: $border-color-01;
 
                                 .section-04-portfolio-thumb-effect, .section-04-portfolio-thumb-c-text {
                                     transform: translateY(0);
                                     opacity: 1;
                                 }
                                 .section-04-portfolio-thumb-image {
-                                    filter: opacity(40%);
+                                    filter: opacity(20%);
                                 }
                             }
 
                             .section-04-portfolio-thumb-image {
                                 width: 100%;
+                                border-radius: 8px;
 
                                 transition: filter .4s;
                             }
@@ -981,13 +968,13 @@
                                     padding: 8px;
 
                                     border-radius: 50%;
-                                    background-color: $gray-02;
+                                    background-color: $bg-color-02;
 
                                     img {
                                         width: 100%;
                                         transform: rotate(-45deg);
 
-                                        filter: brightness(0) saturate(100%) invert(73%) sepia(20%) saturate(7385%) hue-rotate(126deg) brightness(99%) contrast(97%);
+                                        filter: brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(703%) hue-rotate(0deg) brightness(103%) contrast(103%);
                                     }
                                 }
                             }
@@ -1035,86 +1022,91 @@
                     @include flex-center-column;
                     gap: 20px;
 
-                    width: 100%;      
+                    width: 100%;
                     
                     // w-700px
                     @include w-700px {
                         flex-direction: row;
                         flex-wrap: wrap;
 
-                        .section-05-c-service:nth-child(1), .section-05-c-service:nth-child(2), .section-05-c-service:nth-child(3) {
+                        .section-05-c-service:nth-child(1),.section-05-c-service:nth-child(2), .section-05-c-service:nth-child(3), .section-05-c-service:nth-child(4){
                             width: calc(50% - 10px);
                         }
                     }
+
                     .section-05-c-service {
                         position: relative;
-                        @include flex-center;
 
+                        min-height: 180px;
                         width: 100%;
-
-                        text-align: center;
-                        color: $white;
 
                         perspective: 4000px;
 
                         &:hover {
-                            div {
-                                transform: rotateY(180deg);
-                            }
                             .section-05-service-c-front {
-                                backface-visibility: hidden;
+                                transform: rotateY(-180deg);
+
+                                h3 {
+                                    opacity: 0;
+                                }
                             }
                             .section-05-service-c-back {
-                                transform: rotateY(360deg);
+                                transform: rotateY(0);
                             }
                         }
 
                         .section-05-service-c-front, .section-05-service-c-back {
+                            position: absolute;
+
                             @include flex-center;
-                            gap: 10px;
 
-                            height: 180px;
+                            height: 100%;
                             width: 100%;
+                            padding: 20px;
 
-                            padding: 30px 20px;
-                            border-radius: 20px;
+                            border: $border-01;
+                            border-radius: 8px;
 
                             transform-style: preserve-3d;
+                            text-align: center;
 
-                            background-color: $midnightblue-02;
+                            transition: $transition-01;
 
-                            transition: transform 1s;
+                            background-color: $bg-color-02;
+                        }
+                        .section-05-service-c-front {
 
                             h3 {
-                                font-size: 1.6rem;
+                                font-size: 1.8rem;
                                 font-weight: 400;
+                                transform: translate3d(0, 0, 60px);
 
-                                transform: translate3d(0, 0, 80px);
+                                color: $white;
 
-                                // w-900px
-                                @include w-900px {
-                                    font-size: 1.7rem;
-                                }
-                            }
-                            p {
-                                font-size: 1.2rem;
+                                transition-delay: .3s;
 
-                                transform-style: preserve-3d;
-                                transform: rotateY(0) translate3d(0, 0, 80px);
-
-                                backface-visibility: hidden;
-
-                                // w-900px
-                                @include w-900px {
-                                    font-size: 1.3rem;
+                                span {
+                                    @include text-p-style-02;
                                 }
                             }
                         }
                         .section-05-service-c-back {
-                            position: absolute;
-
                             transform: rotateY(180deg);
                             backface-visibility: hidden;
+
+                            p {
+                                @include text-p-style;
+                                font-size: 1rem;
+                                line-height: initial;
+
+                                backface-visibility: hidden;
+                                transform: translate3d(0, 0, 60px);
+
+                                // w-900px
+                                @include w-900px {
+                                    font-size: 1.2rem;
+                                }
+                            }
                         }        
                     }
                 }
@@ -1128,6 +1120,8 @@
                 .section-06-c-form {
                     width: 100%;
                     padding-block: 10px;
+
+                    overflow: hidden;
 
                     form {
                         @include flex-center-column;
@@ -1157,13 +1151,8 @@
                             width: 100%;
 
                             label {
-                                font-size: 1.2rem;
-                                color: $gray-01;
-
-                                // w-900px
-                                @include w-900px{
-                                    font-size: 1.3rem;
-                                }
+                                @include text-p-style;
+                                line-height: initial;
                             }
                             input {
                                 position: relative;
@@ -1192,40 +1181,17 @@
                                     color: $white;
                                 }
                                 &:focus {
-                                    border-bottom-color: $pink-01;
+                                    border-bottom-color: $bg-color-04;
                                 }
                             }
                         }
                         .section-06-c-submit {
-                            position: relative;
-
+                            @include button-style;
                             padding: 0;
-                            border-radius: 30px;
 
-                            overflow: hidden;
-                            z-index: 9;
-
-                            background-color: $turquoise;
-
-                            &::before {
-                                content: '';
-                                position: absolute;
-
-                                transform: translateY(-100%);
-
-                                height: 100%;
-                                width: 100%;
-
-                                z-index: -1;
-
-                                background-color: $yellow-01;
-
-                                transition: transform .4s;
-                            }
-
-                            &:has(input:hover){
-                                &::before {
-                                    transform: translateY(0);
+                            &:hover {
+                                input {
+                                    color: $bg-color-01;
                                 }
                             }
 
@@ -1238,9 +1204,11 @@
 
                                 cursor: pointer;
 
-                                color: $midnightblue-01;
+                                color: $white;
 
                                 background-color: transparent;
+
+                                transition: color .4s;
                             }
                         }
                     }
@@ -1251,11 +1219,42 @@
 
                 p {
                     font-size: 1.1rem;
-                    color: $gray-02;
+                    color: $white;
+                    opacity: $opacity-01;
                 }
             }
         }
     }
+}
+
+.hidden-effect-01,
+.hidden-effect-02,
+.hidden-effect-03,
+.hidden-effect-04,
+.hidden-effect-05 {
+    opacity: 0;
+    transition: $transition-01;
+}
+.hidden-effect-01 {
+    transform: translateY(-100%);
+}
+.hidden-effect-02 {
+    transform: scale(0.5);
+}
+.hidden-effect-03 {
+    transform: translateX(50%);
+}
+.hidden-effect-04 {
+    transform: translateX(-50%);
+}
+.hidden-effect-05 {
+    transform: rotateX(90deg);
+}
+.visible-effect {
+    transform: scale(1);
+    transform: translate(0);
+    transform: rotate(0);
+    opacity: 1;
 }
 
 @keyframes infinite-translate {

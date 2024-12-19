@@ -1,8 +1,9 @@
-$midnightblue-01: #121220;
-$midnightblue-02: #131330;
-$midnightblue-03: #080814;
-$pink-01: #F22294;
-$pink-02: #f222945b;
+$bg-color-01: #061D1E;
+$bg-color-02: #FFFFFF1a;
+$bg-color-03: #FFFFFF23;
+$bg-color-04: #FFAE00;
+$border-color-01: #FFFFFF1a;
+
 $orange-01: #F16529;
 $orange-02: #E44D261A;
 $blue-01: #33A9DC;
@@ -10,12 +11,13 @@ $blue-02: #1572B61A;
 $gray-01: #B2B2B2;
 $gray-02: #FFFFFF38;
 $yellow-01: #F2BC57;
-$yellow-03: #f2bc579c;
 $yellow-02: #F0DB4F1A;
-$violet-01: #EE05F2;
-$violet-02: #CB66991A;
 $magenta-01: #D8267F;
 $magenta-02: #BC04BF1A;
-
 $turquoise: #04D9C4;
+
 $white: #F9F9F9;
+
+$border-01: 1px solid $border-color-01;
+$opacity-01: .8;
+$transition-01: all .8s ease-out;
