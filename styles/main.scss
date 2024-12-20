@@ -4,7 +4,42 @@
 
 @use 'form-submit' as *;
 
+.container-load {
+    position: absolute;
+
+    @include flex-center;
+    @include fix-bg;
+
+    min-height: 100vh;
+    width: 100%;
+
+    background-color: $bg-color-01;
+
+    transition: opacity .4s;
+
+    .load-line {
+        position: absolute;
+        border-radius: 50%;
+        animation: infinite-rotate 4s infinite linear;
+    }
+    .load-line:nth-child(1) {
+        height: 140px;
+        width: 140px;
+        border-top: $border-02;
+    }
+    .load-line:nth-child(2) {
+        height: 120px;
+        width: 120px;
+        border-left: $border-02;
+    }
+    .load-line:nth-child(3) {
+        height: 100px;
+        width: 100px;
+        border-bottom: $border-02;
+    }
+}
 .fix-bg {  
+    display: none;
     @include fix-bg;
 
     .container-site {
@@ -1226,7 +1261,10 @@
         }
     }
 }
-
+.hidden-load {
+    opacity: 0;
+    pointer-events: none;
+}
 .hidden-effect-01,
 .hidden-effect-02,
 .hidden-effect-03,
@@ -1257,6 +1295,14 @@
     opacity: 1;
 }
 
+@keyframes infinite-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 @keyframes infinite-translate {
     100% {
         transform: translateX(-100%);

@@ -8,13 +8,13 @@
   font-family: "Outfit", sans-serif;
 }
 
-.fix-form-bg {
+.fix-bg {
   background-image: url(../images/bg.png);
   background-size: cover;
   background-position: center;
   background-color: #061D1E;
 }
-.fix-form-bg .container-form {
+.fix-bg .container-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,33 +25,33 @@
   overflow-y: auto;
   padding-inline: 10px;
 }
-.fix-form-bg .container-form::-webkit-scrollbar {
+.fix-bg .container-form::-webkit-scrollbar {
   width: 4px;
 }
-.fix-form-bg .container-form::-webkit-scrollbar-thumb {
+.fix-bg .container-form::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.1019607843);
 }
 @media screen and (min-width: 500px) {
-  .fix-form-bg .container-form {
+  .fix-bg .container-form {
     max-width: 500px;
   }
 }
 @media screen and (min-width: 700px) {
-  .fix-form-bg .container-form {
+  .fix-bg .container-form {
     max-width: 700px;
   }
 }
 @media screen and (min-width: 900px) {
-  .fix-form-bg .container-form {
+  .fix-bg .container-form {
     max-width: 900px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .fix-form-bg .container-form {
+  .fix-bg .container-form {
     max-width: 1200px;
   }
 }
-.fix-form-bg .container-form .section-c-form {
+.fix-bg .container-form .section-c-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,12 +62,12 @@
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1019607843);
 }
-.fix-form-bg .container-form .section-c-form h1 {
+.fix-bg .container-form .section-c-form h1 {
   word-break: break-all;
   font-size: 3.6rem;
   color: #F9F9F9;
 }
-.fix-form-bg .container-form .section-c-form p {
+.fix-bg .container-form .section-c-form p {
   font-size: 1.2rem;
   line-height: 30px;
   opacity: 0.8;
@@ -75,11 +75,11 @@
   line-height: initial;
 }
 @media screen and (min-width: 900px) {
-  .fix-form-bg .container-form .section-c-form p {
+  .fix-bg .container-form .section-c-form p {
     font-size: 1.3rem;
   }
 }
-.fix-form-bg .container-form .section-c-form a {
+.fix-bg .container-form .section-c-form a {
   position: relative;
   padding: 16px 30px;
   border: 1px solid rgba(255, 255, 255, 0.1019607843);
@@ -91,7 +91,7 @@
   background-color: rgba(255, 255, 255, 0.1019607843);
   transition: color 0.4s;
 }
-.fix-form-bg .container-form .section-c-form a::before {
+.fix-bg .container-form .section-c-form a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -103,14 +103,50 @@
   background-color: #F2BC57;
   transition: transform 0.4s;
 }
-.fix-form-bg .container-form .section-c-form a:hover {
+.fix-bg .container-form .section-c-form a:hover {
   color: #061D1E;
 }
-.fix-form-bg .container-form .section-c-form a:hover::before {
+.fix-bg .container-form .section-c-form a:hover::before {
   transform: translateY(0);
 }
 
+.container-load {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+  background-color: #061D1E;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #061D1E;
+  transition: opacity 0.4s;
+}
+.container-load .load-line {
+  position: absolute;
+  border-radius: 50%;
+  animation: infinite-rotate 4s infinite linear;
+}
+.container-load .load-line:nth-child(1) {
+  height: 140px;
+  width: 140px;
+  border-top: 4px solid #FFAE00;
+}
+.container-load .load-line:nth-child(2) {
+  height: 120px;
+  width: 120px;
+  border-left: 4px solid #FFAE00;
+}
+.container-load .load-line:nth-child(3) {
+  height: 100px;
+  width: 100px;
+  border-bottom: 4px solid #FFAE00;
+}
+
 .fix-bg {
+  display: none;
   background-image: url(../images/bg.png);
   background-size: cover;
   background-position: center;
@@ -1462,6 +1498,11 @@
   opacity: 0.8;
 }
 
+.hidden-load {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .hidden-effect-01,
 .hidden-effect-02,
 .hidden-effect-03,
@@ -1498,6 +1539,14 @@
   opacity: 1;
 }
 
+@keyframes infinite-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @keyframes infinite-translate {
   100% {
     transform: translateX(-100%);
