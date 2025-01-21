@@ -8,6 +8,10 @@
   font-family: "Outfit", sans-serif;
 }
 
+html {
+  background-color: #061D1E;
+}
+
 .fix-bg {
   background-image: url(../images/bg.png);
   background-size: cover;

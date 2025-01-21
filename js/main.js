@@ -27,6 +27,7 @@ const PAGE_ID = document.body.id;
 if(PAGE_ID === 'page-01'){
     // Menu Hamburger
     const MENU_HAMBURGER = document.querySelector('.header-menu-hamburger');
+    const UL_LIST = [...document.querySelectorAll('.ul-list')];
 
     function toggleMenu(){
         const HEADER = document.querySelector('header');
@@ -43,6 +44,11 @@ if(PAGE_ID === 'page-01'){
     };
 
     MENU_HAMBURGER.addEventListener('click', toggleMenu);
+    UL_LIST.map((el)=>{
+        el.addEventListener('click', ()=>{
+            toggleMenu()
+        })
+    })
 
     // Skills
     const SKILLS_TEXT_01 = [...document.querySelectorAll('.skills-text-01')];
